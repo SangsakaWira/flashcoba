@@ -1,0 +1,31 @@
+<h1>Data Sent</h1>
+
+<script src="/socket.io/socket.io.js"></script>
+    <script>
+        
+        var socket = io();
+       
+        socket.on("connect",function(){
+            console.log("Connected to server");
+        });
+
+        socket.on("data",function(data){
+            data = JSON.stringify(data);
+            myData = JSON.parse(data);
+            mySuhu = myData.suhu;
+            myTangisan = myData.tangisan;
+            myHumidity = myData.humidity;
+            myAnalog = myData.analog;
+            myLampu = myData.lampu;
+            console.log("Suhu: " + mySuhu);
+            console.log("Humidity: " + myHumidity);
+            console.log("Tangisan: " + myTangisan);
+            console.log("Analog: "+myAnalog);
+            console.log("Lampu: "+myLampu);
+        });
+
+        socket.on("analog",function(analog){
+            console.log("analog: ",analog);
+        });
+  
+</script>

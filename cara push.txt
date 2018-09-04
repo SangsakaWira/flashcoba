@@ -18,3 +18,7 @@ git commit -m "first commit"
 git remote add origin https://github.com/SangsakaWira/flashcoba.git
 
 ssh -v git@heroku.com
+
+heroku create
+
+git push heroku
