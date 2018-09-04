@@ -10,7 +10,8 @@
         });
 
         socket.on("data",function(data){
-            console.log("Suhu: " + data);
+            myPesan = data.pesan;
+            console.log("Pesan: " + myPesan);
         });
 
         socket.on("analog",function(analog){
