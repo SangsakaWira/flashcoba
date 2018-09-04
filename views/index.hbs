@@ -10,18 +10,7 @@
         });
 
         socket.on("data",function(data){
-            data = JSON.stringify(data);
-            myData = JSON.parse(data);
-            mySuhu = myData.suhu;
-            myTangisan = myData.tangisan;
-            myHumidity = myData.humidity;
-            myAnalog = myData.analog;
-            myLampu = myData.lampu;
-            console.log("Suhu: " + mySuhu);
-            console.log("Humidity: " + myHumidity);
-            console.log("Tangisan: " + myTangisan);
-            console.log("Analog: "+myAnalog);
-            console.log("Lampu: "+myLampu);
+            console.log("Suhu: " + data);
         });
 
         socket.on("analog",function(analog){
